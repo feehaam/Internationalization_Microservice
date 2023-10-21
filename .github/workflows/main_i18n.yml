@@ -48,7 +48,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'integration3666'
+          app-name: 'i18n'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E8A8C3FA6B9A425BA5888AC2E553827C }}
-          package: '*SNAPSHOT.jar'
+          package: '*.jar'
