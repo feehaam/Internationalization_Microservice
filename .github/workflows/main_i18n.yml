@@ -50,5 +50,5 @@ jobs:
         with:
           app-name: 'integration3666'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F3C11868E89E472CB156ADF908178A2B }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E8A8C3FA6B9A425BA5888AC2E553827C }}
           package: '*SNAPSHOT.jar'
