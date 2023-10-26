@@ -21,15 +21,14 @@ jobs:
         with:
           java-version: '17'
 
-      - name: Build with Maven
-        run: mvn clean install
+      - name: Build with Gradle
+        run: ./gradlew clean build
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
           name: java-app
-          path: '${{ github.workspace }}/target/*.jar'
-
+          path: '${{ github.workspace }}\build\libs\*.jar'
   deploy:
     runs-on: windows-latest
     needs: build
@@ -50,4 +49,4 @@ jobs:
           app-name: 'i18n'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6E3DF927760148A594146EB5BA8CEC3D }}
-          package: '*.jar'
+          package: '*SNAPSHOT.jar'
